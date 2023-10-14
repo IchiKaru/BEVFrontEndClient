@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.google.android.gms:play-services-maps:17.0.1")
     implementation("androidx.compose.material3:material3:1.1.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.1.1")
     implementation("androidx.core:core-ktx:1.10.1")
