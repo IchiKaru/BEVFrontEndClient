@@ -1,11 +1,12 @@
 package com.example.mymap;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity; //will deal with this later
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -22,8 +23,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
-
-import com.example.mymap.R;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
@@ -45,7 +44,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         this.googleMap = googleMap;
 
         // Replace with your server's API endpoint for vehicle location data
-        String apiUrl = "https://your-server/api/vehicle-locations";
+        @SuppressLint("AuthLeak") String apiUrl = "mongodb+srv://ClientSide:SDpJGwDBlEJLTtKZ@rt-location.ahaubf7.mongodb.net/?retryWrites=true&w=majority";
 
         new FetchVehicleLocationsTask().execute(apiUrl);
     }
